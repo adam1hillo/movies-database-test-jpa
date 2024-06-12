@@ -1,0 +1,1 @@
+insert into roles (actorId, movieId, name) values ((select id from actors where firstname = 'testActorFirstname1'), (select m.id from movies m where m.name = 'testMovie'), 'testRole1'), ((select a.id from actors a where a.firstname = 'testActorFirstname2'), (select m.id from movies m where m.name = 'testMovie'), 'testRole2')

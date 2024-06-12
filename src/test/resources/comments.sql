@@ -1,0 +1,1 @@
+insert into comments (movieId, emailAddress, comment, moment) values ((select id from movies where name = 'testMovie'), 'testComment1@example.org', 'testComment1', now()), ((select id from movies where name = 'testMovie'), 'testComment2@example.org', 'testComment2', now())

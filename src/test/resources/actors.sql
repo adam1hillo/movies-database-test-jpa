@@ -1,0 +1,1 @@
+insert into actors (id, firstname, lastname, gender) values (((select max(a2.id) from actors a2) + 1), 'testActorFirstname1', 'testActorLastname1', 'M'), (((select max(a2.id) from actors a2) + 1), 'testActorFirstname2', 'testActorLastname2', 'F')

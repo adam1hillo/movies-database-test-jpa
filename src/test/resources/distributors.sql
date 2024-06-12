@@ -1,0 +1,1 @@
+insert distributors (name) values ('testDistributor')

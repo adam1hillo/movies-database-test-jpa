@@ -1,0 +1,1 @@
+insert into directors (id, firstname, lastname) values (((select max(d.id) from movies d) + 1), 'testDirectorFirstname', 'testDirectorLastname')

@@ -1,0 +1,1 @@
+insert into movies (id, name, year, ranking, distributorId) values (((select max(m2.id) from movies m2) + 1), 'testMovie', 2000, 3.5, (select d.id from distributors d where d.name = 'testDistributor'))

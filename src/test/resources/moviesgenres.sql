@@ -1,0 +1,1 @@
+insert into moviesgenres (movieId, genreId) values ((select m.id from movies m where m.name = 'testMovie'), (select g.id from genres g where g.name = 'testGenre'))
