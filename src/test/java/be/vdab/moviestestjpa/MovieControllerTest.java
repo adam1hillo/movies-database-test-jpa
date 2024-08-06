@@ -81,7 +81,11 @@ public class MovieControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("7"))
                 .andExpect(status().isOk());
-        assertThat(JdbcTestUtils.countRowsInTableWhere(jdbcClient, MOVIES_TABLE, "ranking = 7 and name like 'testMovie' and id = " + id)).isOne();
+        mockMvc.perform(get("/movies/{id}", id))
+                .andExpectAll(status().isOk(),
+                        jsonPath("id").value(id),
+                        jsonPath("name").value("testMovie"),
+                        jsonPath("ranking").value(7));
     }
     @Test
     void changeRankingVanOnbestaandeMovieMislukt() throws Exception {
